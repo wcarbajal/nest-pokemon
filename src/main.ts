@@ -11,9 +11,19 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true, 
+      transform: true, // This will transform the incoming request body to class instances
+      transformOptions: {
+        enableImplicitConversion: true, // This will automatically convert string values to their respective types
+        //allowNumberString: true, // This will allow numbers to be passed as strings
+        //excludeExtraneousKeys: false, // This will allow additional properties in the incoming request body
+        //transformOptions: {
+        //  excludePrefixes: ['transform'], // This will exclude properties starting with 'transform'
+        //},
+      }
     })
   );
 
-  await app.listen(3000);
+  await app.listen( process.env.PORT );
+  console.log(`Server is running on port ${process.env.PORT}`);
 }
 bootstrap();
