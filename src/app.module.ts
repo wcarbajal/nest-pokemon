@@ -23,7 +23,8 @@ import { JoiValidationSchema } from './config/joi.validation';
     } ),
 
     MongooseModule.forRoot( process.env.MONGODB, {
-      dbName: 'nest-pokemon'
+      dbName: 'nest-pokemon',
+      mongodb: mongodb+srv://wcarbajal80:8J4ptwrnQDNVci2M@nest-pokemon.baxag.mongodb.net/?retryWrites=true&w=majority&appName=nest-pokemon
 
     } ),
 
