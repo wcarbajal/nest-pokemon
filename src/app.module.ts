@@ -22,10 +22,10 @@ import { JoiValidationSchema } from './config/joi.validation';
       rootPath: join( __dirname, '..', 'public' ),
     } ),
 
-    MongooseModule.forRoot( process.env.MONGODB, {
+    MongooseModule.forRoot( 'mongodb+srv://wcarbajal80:8J4ptwrnQDNVci2M@nest-pokemon.baxag.mongodb.net/?retryWrites=true&w=majority&appName=nest-pokemon', {
       dbName: 'nest-pokemon',     
 
-    }, mongodb+srv://wcarbajal80:8J4ptwrnQDNVci2M@nest-pokemon.baxag.mongodb.net/?retryWrites=true&w=majority&appName=nest-pokemon),
+    }),
 
     PokemonModule,
 
